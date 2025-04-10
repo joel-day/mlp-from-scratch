@@ -37,6 +37,9 @@ uv sync --all-packages
 health_score = mlp_health_score(age, health, diet)
 ```
 
+- For example - this is what it looks like
+![example](https://github.com/user-attachments/assets/94f60135-32a6-49d9-8cab-1452673807c2)
+
 ## Understand How it Works
 
 - The 'train_model.py' holds the code to train the network and provde the predictions.
