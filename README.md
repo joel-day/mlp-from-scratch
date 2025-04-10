@@ -1,41 +1,21 @@
-# Custom Monorepo Template
+# MLP from Scrach using Numpy (HealthScore)
 
-This template builds a mono-repo with its own virtual environment. It configures tools to ensure the code runs, follows PEP8 guidelines, and runs on Linux, Windows, and Mac - as well as Python versions 3.10, 3.11, & 3.12. 
+- HealthScore is a multi-layer perceptron trained using ONLY numpy which uses age, fitness, and diet to predict a health score from 1–10. 
+
+- The training data was made up - by me - but created to mimic the relationships of each feature in the real world. 
+
+- HealthScore is able to capture the effects of each feature (ie higher age = lower health score, higher diet = higher health score, higher fitness = higher health score).
+
 
 ## Installation
 
- On Github, manually create a new repository 'new-repo-name'
-
 ```bash
 # Clone the repository
-git clone https://github.com/joel-day/custom-monorepo-template.git
+git clone https://github.com/joel-day/mlp-from-scratch.git
 
 # Move into the local repository
-cd custom-monorepo-template
+cd mlp-from-scratch
 
-# Remove git's connection and all commit history ect from the original repository
-Remove-Item -Recurse -Force .git
-
-# Manually create new repository in Github named "new-project-repo" with no README, and rename the locally cloned template to match the name
-cd ..
-mv project-template-custom-cookiecutter new-repo-name
-cd new-repo-name
-
-# Push template into the new repo
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/your-username/new-repo-name.git
-git push -u origin main
-
-# (OPTIONAL) Ensure you are connected to the new repository
-git remote -v
-```
-
-## Setup Virtual Environment and Dependencies
-
-```bash
 # Create the virtual environment
 uv venv .venv
 
@@ -43,25 +23,22 @@ uv venv .venv
 source .venv\bin\activate # Mac/Linux
 .venv\Scripts\activate   # Windows
 
-# Sync environment based on dependencies in top-level pyproject.toml file
-uv sync
-
-# (OPTIONAL) Sync environment based on dependencies across all packages' pyproject.toml files
+# Sync environment based on dependencies across all packages' pyproject.toml files
 uv sync --all-packages
 ```
 
-## Included Tools & Packages
+## Run the Model
 
-- **UV**: Used for package management and virtual environment creation. Configured to manage environments in a monorepo setup, ensuring consistency across the project.
+- Run the model in the 'mlp.ipynb' notebook
 
-- **GitHub Actions**: Ensures that the code works across multiple operating systems (Linux, Mac, and Windows) and supports Python versions 3.10, 3.11, and 3.12. It's a part the CI pipeline and is configured to run on pull requests to main.
+- Execute the python code below in the 'mlp.ipynb' notebook to use the model
 
-- **Pytest**: Configured to run tests and verify the correctness of code execution. It ensures that the codebase remains functional and that new changes don’t introduce unexpected behavior.
-```bash
-pytest
-```
-- **Flake8**: Used for checking code compliance with PEP8 standards. It helps maintain a clean and consistent code style across the project by enforcing formatting and style guidelines.
-```bash
-flake8 .
+```python
+health_score = mlp_health_score(age, health, diet)
 ```
 
+## Understand How it Works
+
+- The 'train_model.py' holds the code to train the network and provde the predictions.
+
+- The 'mlp_scratch_numpy.ipynb' notebook is a more in depth workflow of the code. It has two parts 1) A simpler ANN model as the foundation 2) The MLP with added layers.

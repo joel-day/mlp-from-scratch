@@ -1,0 +1,29 @@
+equations
+
+Partial MSE wrt w1
+
+ \frac{\partial MSE}{\partial w_{1}} = \textup{1} \frac{\partial MSE}{\partial \hat{y}} * \textup{2} \frac{\partial \hat{y}}{\partial Z} * \textup{3} \frac{\partial Z}{\partial w_{1}} \textup{(chain rule)}
+
+MSE 
+
+MSE = \frac{1}{n} \sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^{2}
+
+dMSE
+
+\textup{1} \frac{\partial MSE}{\partial \hat{y}} = = \frac{1}{n}* 2 \sum_{i=1}^{n}(y_{i}-\hat{y_{i}})
+
+dy wrt z
+
+(\textup{2})\frac{\partial \hat{y}}{\partial Z} = 1
+
+Z
+
+Z = (w_{1} *  x_{1}) +  (w_{2} *  x_{2}) +  (w_{3} *  x_{3}) +  b
+
+w1
+
+\frac{\partial MSE}{\partial w_{1}} = (\textup{1}) \frac{\partial MSE}{\partial \hat{y}} * (\textup{2}) \frac{\partial \hat{y}}{\partial Z} * (\textup{3}) \frac{\partial Z}{\partial \hat{y}*{h1}} * (\textup{4}) \frac{\partial \hat{y}*{h1}}{\partial h_{1}}* (\textup{5}) \frac{\partial h_{1}}{\partial w_{1}}
+
+w7
+
+\frac{\partial MSE}{\partial w_{7}} = (\textup{1}) \frac{\partial MSE}{\partial \hat{y}} * (\textup{2}) \frac{\partial \hat{y}}{\partial Z} * (\textup{3}) \frac{\partial Z}{\partial {w}_{7}}
