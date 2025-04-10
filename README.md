@@ -47,4 +47,6 @@ health_score = mlp_health_score(age, health, diet)
 
 - The 'mlp_scratch_numpy.ipynb' notebook is a more in depth workflow of the code. It has two parts 1) A simpler ANN model as the foundation 2) The MLP with added layers.
 
+- find it here - https://github.com/joel-day/mlp-from-scratch/blob/main/notebooks/mlp_scratch_numpy.ipynb
+
 ![Screenshot 2024-07-15 212223](https://github.com/user-attachments/assets/3d7f58e5-8669-4afe-9ea4-a5ff313d73b9)
